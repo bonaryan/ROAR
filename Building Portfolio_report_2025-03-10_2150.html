@@ -1,0 +1,358 @@
+<!DOCTYPE html><html><title>Resiliency Opportunity Assessment and Response (ROAR) Report</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+            <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/jquery.tablesorter.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.42.5/plotly.js"></script>
+            <style>
+            body,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: "Helvetica", sans-serif
+                }
+            .td_border {
+                border: solid 0px grey;
+                }
+            .w3-table td {
+                padding: 0px;
+                }
+            .number {
+                position: relative;
+                font: bold italic 40px/1.5 Helvetica, Verdana, sans-serif;
+                color: green;
+                margin: 10px;
+                text-align: left;
+                }
+            .number1 {
+                position: relative;
+                font: bold italic 40px/1.5 Helvetica, Verdana, sans-serif;
+                color: maroon;
+                margin: 10px;
+                text-align: left;
+                }
+            .benchmark_bar {
+                height: 38px;
+                background: linear-gradient(to right, #ff0000 0%, #ffff00 50%, #00ff00 100%);
+                }
+            .vertical_line {
+                height: 38px;
+                width: 3px;
+                background: #000;
+                position: relative;
+                }
+            </style>
+        <body class="w3-light-grey w3-content" style="max-width:1500px"><nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:270px;" id="mySidebar"><br>    <div class="w3-container">        <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">            <i class="fa fa-remove"></i>        </a><a href="https://2030districts.org/greater-victoria/"><img src="https://2030districts.org/greater-victoria/wp-content/uploads/sites/17/Victoria-Established-Logo.png" style="height:90px; margin:auto auto auto 20px;"></a><a href="https://www.uvic.ca/"><img src="https://www.uvic.ca/brand/_assets/images/cards/cards/uvic-crest.webp" style="height:90px; margin:auto auto auto 16px;"></a>        <br><br>        <h4><b>Resiliency Opportunity Assessment and Response (ROAR)</b></h4>        <p class="w3-text-grey" style="font-size:80%">2025-03-10  21:50</p>    </div>    <div class="w3-bar-block">        <a href="#overview" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-th-large fa-fw w3-margin-right"></i>Overview</a>         <a href="#benchmark" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-group fa-fw w3-margin-right"></i>Risk Level</a>         <a href="#EE" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calculator fa-fw w3-margin-right"></i>Response Options</a>        <a href="#IMT" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-key fa-fw w3-margin-right"></i>Performance Key</a>        <a href="#About" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-info fa-fw w3-margin-right"></i>About ROAR</a>    </div></nav><div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div><!-- !PAGE CONTENT! --><div class="w3-main" style="margin-left:300px; margin-right:20px">
+            <div class="w3-container w3-padding-large w3-white"> <h2 id="overview"><b>Building Portfolio Summary</b></h2>
+                <hr class="w3-opacity">
+                <div class="w3-container w3-margin-bottom w3-padding-small">
+                    <table class="w3-table w3-bordered w3-border">
+                        <tr>
+                            <td width="50%" class="td_border" colspan="3"><b>Building Name</b></td>
+                            <td width="50%" class="td_border" colspan="3"><b>Davidson Building</b></td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="td_border" colspan="3"><b>Building Address</b></td>
+                            <td width="50%" class="td_border" colspan="3">3400 Davidson Avenue, Victoria, BC, Canada</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="td_border" colspan="3"><b>Building Coordinate (lat, lon)</b></td>
+                            <td width="50%" class="td_border" colspan="3">48.428, <span>-123.366</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="td_border" colspan="3"><b>Total Building Area (m<sup>2</sup>)</b></td>
+                            <td width="50%" class="td_border" colspan="3">5,200</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="td_border" colspan="3"><b>Building Type</b></td>
+                            <td width="50%" class="td_border" colspan="3">Office</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="td_border" colspan="3"><b>Building Structural Type</b></td>
+                            <td width="50%" class="td_border" colspan="3">Concrete structure</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="td_border" colspan="3"><b>Number of Storey</b></td>
+                            <td width="50%" class="td_border" colspan="3">4</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="td_border" colspan="3"><b>Number of Basement</b></td>
+                            <td width="50%" class="td_border" colspan="3">nan</td>
+                        </tr>
+                    </table> <br>
+
+                    <table class="w3-table w3-bordered w3-border">
+                        <tr>
+                            <td width="50%" class="td_border" colspan="3"><b>Climate Scenario</b></td>
+                            <td width="50%" class="td_border" colspan="3">SSP5-8.5</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="td_border" colspan="3"><b>Future Projection Year</b></td>
+                            <td width="50%" class="td_border" colspan="3">2050</td>
+                        </tr>
+                    </table> <br>
+
+                    <table class="w3-table w3-bordered w3-border">
+                        <tr>
+                            <td width="50%" class="td_border" colspan="3"><b>Number of Components Assessed</b></td>
+                            <td width="50%" class="td_border" colspan="3">3</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="td_border" colspan="3"><b>Total Capital Cost of Assets ($)</b></td>
+                            <td width="50%" class="td_border" colspan="3">565,403</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="td_border" colspan="3"><b>Total Potential Cost Savings ($)</b></td>
+                            <td width="50%" class="td_border" colspan="3">300,524</td>
+                        </tr>
+                    </table>
+                    <p style="margin:0px; font-size:12px;">&nbsp;&nbsp;<i>Note: The asset component specs are collected from data input.</i></p> 
+                    <br>
+
+                    <table class="w3-table w3-bordered w3-border" style="width:95% border: solid 1 px blue">
+                        <tr>
+                            <td width="50%" class="td_border" colspan="4"></td>
+                            <td width="25%" class="td_border" colspan="4"><b>Electricity</b></td>
+                            <td width="25%" class="td_border" colspan="4"><b>Fossil Fuel</b></td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="td_border" colspan="4"><b>Portfolio Annual Consumption (kWh)</b></td>
+                            <td width="25%" class="td_border" colspan="4">856,630</td>
+                            <td width="25%" class="td_border" colspan="4">145,263</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="td_border" colspan="4"><b>Portfolio Annual Cost ($)</b></td>
+                            <td width="25%" class="td_border" colspan="4">85,663</td>
+                            <td width="25%" class="td_border" colspan="4">29,739</td>
+                        </tr>
+                        <tr>
+                            <td width="50%" class="td_border" colspan="4"><b>Portfolio Average Annual Site EUI (kWh/m<sup>2</sup>)</b></td>
+                            <td width="25%" class="td_border" colspan="4">165</td>
+                            <td width="25%" class="td_border" colspan="4">28</td>
+                        </tr>
+                    </table>
+                    <p style="margin:0px; font-size:12px;">&nbsp;&nbsp;<i>Note: The annual results are from the most recent min. 12 months' input.</i></p>
+                </div>
+            </div><br>
+            
+            <div class="w3-container w3-padding-large w3-white"> <h2 id="benchmark"><b>Risk Levels</b></h2>
+                <hr class="w3-opacity">
+                <div class="w3-container w3-margin-bottom w3-col m12 w3-padding-small">
+                    <div class="w3-container ">
+
+                         The chart below shows the risk levels and savings potentials for each component in your building. 
+                            The X-axis represents consequence level, and the Y-axis represents occurence probability level. 
+                            If your building is dominated by extreme-shock events where high-consequences low-probability risk poses, it will sit somewhere at the bottom of the chart, since occurence probability will be somewhere below the quadran.
+                            Meanwhile, high-probability low-consequence risk sits somewhere at the upper left of the quadran. To reduce bias of the potentially same level of risk from these two risk categories, scatter bubble is introduced. 
+                            Bubble size indicates the potential cost savings in Canada dollars ($) – the bigger the bubble, the higher that building’s savings potential, and hence indicate prioritization for treatment.
+                            
+                            Hover your cursor over each bubble to display key stats about each component, including its ID from the Building input spreadsheet, its risk type, 
+                            its capital cost, its potential cost savings, and its potential cost savings percentage. <br>
+
+                        
+            <div id="cost_saving_bubble_plot" style="height: 100%; width: 100%;" class="plotly-graph-div"></div>
+            <script type="text/javascript">
+            window.PLOTLYENV = window.PLOTLYENV || {};
+            window.PLOTLYENV.BASE_URL = "https://plot.ly";
+            Plotly.newPlot("cost_saving_bubble_plot", [
+
+            {
+                "type": "scatter",
+                "name": "Chillers",
+                "x": [0.63],
+                "y": [0.92],
+                "mode": "markers+text",
+                "textposition": "top center",
+                "text": "1",
+                "hoverinfo" : "text",
+                "hovertext": "Component ID: 1 <br>Component Name: Chillers <br>VaR Ratio : 0.63<br>Likelihood : 0.92<br>Potential cost savings: $145,230 <br>Risk level: Very High",
+                "marker": {
+                    "autocolorscale": true,
+                    "sizeref": 0.8,
+                    "size": [33.599999999999994],
+                    "color": "rgba(255, 0, 0, 0.8)",
+                    "line": {
+                        "width": 2
+                    },
+                    "opacity": 0.9
+                }
+            }
+        ,
+
+            {
+                "type": "scatter",
+                "name": "Boilers",
+                "x": [0.92],
+                "y": [0.16],
+                "mode": "markers+text",
+                "textposition": "top center",
+                "text": "2",
+                "hoverinfo" : "text",
+                "hovertext": "Component ID: 2 <br>Component Name: Boilers <br>VaR Ratio : 0.92<br>Likelihood : 0.16<br>Potential cost savings: $146,596 <br>Risk level: High",
+                "marker": {
+                    "autocolorscale": true,
+                    "sizeref": 0.8,
+                    "size": [33.75],
+                    "color": "rgba(255, 140, 0, 0.8)",
+                    "line": {
+                        "width": 2
+                    },
+                    "opacity": 0.9
+                }
+            }
+        ,
+
+            {
+                "type": "scatter",
+                "name": "Energy consumption",
+                "x": [0.16],
+                "y": [0.26],
+                "mode": "markers+text",
+                "textposition": "top center",
+                "text": "3",
+                "hoverinfo" : "text",
+                "hovertext": "Component ID: 3 <br>Component Name: Energy consumption <br>VaR Ratio : 0.16<br>Likelihood : 0.26<br>Potential cost savings: $8,696 <br>Risk level: Moderate Low",
+                "marker": {
+                    "autocolorscale": true,
+                    "sizeref": 0.8,
+                    "size": [11.25],
+                    "color": "rgba(50, 205, 50, 0.8)",
+                    "line": {
+                        "width": 2
+                    },
+                    "opacity": 0.9
+                }
+            }
+        ,
+            ],
+            {
+              "title": "Asset Risk Level Map",
+              "hovermode": "closest",
+              "height": 1000,
+              "xaxis": { 
+                  "title": "Value-at-Risk Ratio (percentage)", 
+                  "ticklen": 5, 
+                  "gridwidth": 2, 
+                  "range": [0.0, 1.0], 
+                  "tickmode": "linear", 
+                  "dtick": 0.1428 
+              },
+              "yaxis": { 
+                  "title": "Likelihood (percentage)", 
+                  "ticklen": 5, 
+                  "gridwidth": 2, 
+                  "range": [0.0, 1.0], 
+                  "tickmode": "linear", 
+                  "dtick": 0.1428 
+              },
+              "legend": { "x": 0, "y": 1, "orientation": "h" },
+              "showlegend": false
+            },
+            {
+              "showLink": true,
+              "linkText": "Export to plot.ly"
+            }
+            )
+
+            </script>
+            <script type="text/javascript">
+            window.addEventListener("resize", function() { Plotly.Plots.resize(document.getElementById("cost_saving_bubble_plot")); });
+            </script>
+        
+                    </div>
+                </div>
+                <div class="w3-container w3-margin-bottom w3-padding-small"></div>
+            </div><br>
+            
+            <div class="w3-container w3-padding-large w3-white"> <h2 id="about"><b>Building Details</b></h2>
+                <hr class="w3-opacity">
+                <div class="w3-container w3-margin-bottom w3-col m12 w3-padding-small">
+                    <div class="w3-container ">
+                        
+                         The table below lists key building-climate risk information for assessed components in your building portfolio, including stress, shock, and energy risk, 
+                            and their risk cost and saving potentials. Click on the table headers to sort the buildings according to that metric (for example, 
+                            clicking on “Potential Cost Savings” will sort the components from lowest to highest cost savings potential, 
+                            and clicking again will sort from highest to lowest).
+                            For detailed analysis results of a single component, click on the link in the “Comp. ID” column for that component.  <br>
+                        <br>
+                        <table border="1" class="dataframe w3-table w3-bordered w3-border tablesorter" id="myTable">
+    <thead>
+      <tr style=" text-align: right;">
+          <th>Comp. ID</th>
+          <th>Component Name</th>
+          <th>Hazard</th>
+          <th>Climate Variable</th>
+          <th>Risk Description/Interaction</th>
+          <th>Risk Type</th>
+          <th>Install Year</th>
+          <th>Asset Cost Capital ($)</th>
+          <th>Likeli hood</th>
+          <th>VaR Ratio</th>
+          <th>Risk Level</th>
+          <th>Potential Cost Savings ($)</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href=C:\Users\PLN\Desktop\Dev\roar-master\roar\outputs\1_Victoria,_BC_Chillers_report.html>1</a></td>
+            <td>Chillers</td>
+            <td>Increased Temperature</td>
+            <td>CDD</td>
+            <td>Failure of chiller due to increased runtime</td>
+            <td>Stress</td>
+            <td>2015</td>
+            <td>250,000</td>
+            <td>0.92</td>
+            <td>0.63</td>
+            <td style="background-color: rgba(255, 0, 0, 0.8); text-align: center;">Very High</td>
+            <td>145,230</td>
+        </tr>
+        <tr>
+            <td><a href=C:\Users\PLN\Desktop\Dev\roar-master\roar\outputs\2_Victoria,_BC_Boilers_report.html>2</a></td>
+            <td>Boilers</td>
+            <td>Extreme Heat</td>
+            <td>T_MAX</td>
+            <td>Boilers shut-down due to insufficient make-up water supply</td>
+            <td>Shocks</td>
+            <td>2015</td>
+            <td>200,000</td>
+            <td>0.16</td>
+            <td>0.92</td>
+            <td style="background-color: rgba(255, 140, 0, 0.8); text-align: center;">High</td>
+            <td>146,596</td>
+        </tr>
+        <tr>
+            <td><a href=C:\Users\PLN\Desktop\Dev\roar-master\roar\outputs\3_Victoria,_BC_Energy_consumption_report.html>3</a></td>
+            <td>Energy consumption</td>
+            <td>Increased Temperature</td>
+            <td>CDD</td>
+            <td>Energy cost due to heating and cooling demand changes</td>
+            <td>Energy</td>
+            <td>2024</td>
+            <td>115,403</td>
+            <td>0.26</td>
+            <td>0.16</td>
+            <td style="background-color: rgba(50, 205, 50, 0.8); text-align: center;">Moderate Low</td>
+            <td>8,696</td>
+        </tr>
+    </tbody>
+</table>
+
+                    </div>
+                </div>
+                <div class="w3-container w3-margin-bottom w3-padding-small"></div>
+            </div><br>
+              <!-- Footer -->  <footer class="w3-container w3-padding-32 w3-white">  <div class="w3-row-padding">    <div class="w3-half">      <h3>Partners</h3><a href="https://www.uvic.ca/"><img src="https://www.uvic.ca/brand/_assets/images/cards/cards/uvic-crest.webp" style="height:80px; margin:auto auto auto 0px;"></a><a href="https://cisl.uvic.ca/"><img src="https://pbs.twimg.com/profile_images/787740167721263104/lcrn3REs_400x400.jpg" style="width:90px; margin:auto auto auto 16px;"></a><a href="https://www.boma.bc.ca/"><img src="https://zeic.ca/wp-content/uploads/2024/09/BOMABC_Blue-e1726596072493.png" style="height:46px; margin:auto auto auto 16px;"></a>    </div>    <div class="w3-half">      <h3>Links</h3>      <ul class="w3-ul w3-hoverable">        <li class="w3-padding-16">          <span class="w3-large"><a href="https://climrisk-tool.com/">Climrisk-tool</a> (future development)</a></span><br>        </li>      </ul>    </div>  </div>  </footer>  <div class="w3-black w3-center w3-padding-24"></div><script>function showTrends() {    var x = document.getElementById("bubble_plot");    if (x.style.display === "none") {        x.style.display = "block";    } else {        x.style.display = "none";    }}</script></body>
+            <script type="text/javascript">
+                $(function() {
+                    $("#myTable").tablesorter();
+                });
+            </script>
+            </html>
